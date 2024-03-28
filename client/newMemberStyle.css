@@ -1,0 +1,70 @@
+/* label{
+    margin-right: 40%;
+} */
+
+body {
+    font-family: Arial, sans-serif; /* גופן טקסט */
+    background-color: #f2f2f2; /* רקע */
+    margin: 0; /* הסרת שוליים */
+    padding: 0; /* הסרת מרווחים */
+    overflow: auto; /* גלילה כלפי */
+    direction: rtl;
+}
+form {
+    /* קידום דפס על מנת להגדיר את המיקום של הכפתור */
+    position: relative;
+    max-width: 900px; /* רוחב מרבי של הטופס */
+    margin: 50px auto; /* מיקום הטופס באמצע העמוד והוספת מרווח מסביב */
+    background-color: #fff; /* רקע */
+    border-radius: 5px; /* סיבוב שוליים */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צלליים */
+    padding: 30px; /* ריפוד */
+}
+
+
+.details {
+    width: 50%; /* רוחב של ה-DIVים */
+    display: inline-block; /* הצגת ה-DIVים בצדדים של העמוד */
+    vertical-align: top; /* מיקום למעלה */
+    margin-bottom: 20px; /* מרווח מתחת ל-DIVים */
+    background-color: white; /* רקע לבן */
+    margin-right: 25%;
+}
+
+h3 {
+    margin-top: 0; /* מרווח מלמעלה לכותרת */
+}
+
+label {
+    display: block; /* תווית בלוק */
+    margin-bottom: 5px; /* מרווח מתחת לתווית */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"] {
+    width: calc(100% - 10px); /* רוחב של הקלט */
+    padding: 8px; /* מרווח פנימי */
+    margin-bottom: 10px; /* מרווח מתחת לקלט */
+    box-sizing: border-box; /* כלול את הריפוד בתוך הרוחב */
+}
+
+button[type="button"] {
+    background-color: #4CAF50; /* צבע רקע */
+    border: none; /* אין גבול */
+    color: white; /* צבע טקסט */
+    padding: 10px 20px; /* ריפוד */
+    text-align: center; /* מרכוז */
+    text-decoration: none; /* הסרת קו תחתון */
+    display: inline-block; /* תווית בלוק */
+    font-size: 16px; /* גודל טקסט */
+    cursor: pointer; /* סמן עכבר */
+    border-radius: 5px; /* סיבוב שוליים */
+
+    position: absolute;
+    bottom: 20px; /* מרווח מהתחתון */
+    left: 50%; /* מיקום באמצע העמוד */
+    transform: translateX(-50%); /* הזזת הכפתור חצי הרוחב שלו שמאלה */
+}
+
+

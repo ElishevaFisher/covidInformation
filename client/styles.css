@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif; /* בחירת גופן טקסט */
+    background-color: #f2f2f2; /* צבע רקע */
+    margin: 0; /* הסרת שוליים */
+    padding: 0; /* הסרת מרווחים */
+    direction: rtl;
+}
+
+h1{
+    color: #666; /* צבע תת כותרת */
+    font-size: 18px; /* גודל התת כותרת */
+    text-align: center; /* מיקום אופקי של הטקסט באמצע */
+}
+
+h4 {
+    color: #333; /* צבע הכותרת */
+    font-size: 20px; /* גודל הכותרת */
+    margin-top: 40px; /* מרווח מלמעלה */
+    text-align: center; /* מיקום אופקי של הטקסט באמצע */
+}
+
+#usersList {
+    background-color: #fff; /* צבע רקע של התיבה */
+    border-radius: 5px; /* סיבוב שוליים */
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1); /* צללית */
+    padding: 20px; /* מרווח פנימי */
+    margin: 0 auto; /* מיקום באמצע הדף */
+    width: 80%; /* רוחב */
+}
+
+button {
+    background-color: #481ab4; /* צבע רקע של הכפתור */
+    border: none; /* הסרת גבולות */
+    color: white; /* צבע טקסט */
+    padding: 10px 20px; /* מרווח בתוך הכפתור */
+    text-align: center; /* מיקום אופקי של הטקסט באמצע */
+    text-decoration: none; /* הסרת קו תחתון */
+    display: block; /* הצגת הכפתור כאיבר בלוק */
+    font-size: 16px; /* גודל הטקסט */
+    margin: 20px auto; /* מרווח מסביב ומיקום מרכזי */
+    cursor: pointer; /* הצגת סמן עכבר כאשר מעבירים מעל הכפתור */
+    border-radius: 5px; /* סיבוב שוליים */
+}
+
+

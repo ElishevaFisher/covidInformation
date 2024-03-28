@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>פרטים אישיים</title>
+    <link rel="stylesheet" href="newMemberStyle.css" />
+  </head>
+  <body dir="rtl">
+    <form>
+      <div class="details">
+        <h3>פרטים אישיים:</h3>
+        <label for="fname">שם פרטי:</label><br />
+        <input type="text" id="fname" name="fname" /><br /><br />
+
+        <label for="lname">שם משפחה:</label><br />
+        <input type="text" id="lname" name="lname" /><br /><br />
+
+        <label for="id">תז:</label><br />
+        <input type="text" id="id" name="id" /><br /><br />
+
+        <label for="address">כתובת(עיר,רחוב,מספר בנין):</label><br />
+        <input type="text" id="address" name="address" /><br /><br />
+
+        <label for="birthdate">תאריך לידה:</label><br />
+        <input type="date" id="birthdate" name="birthdate" /><br /><br />
+
+        <label for="phone">מספר טלפון:</label><br />
+        <input type="tel" id="phone" name="phone" /><br /><br />
+
+        <label for="cellphone">מספר פלאפון:</label><br />
+        <input type="tel" id="cellphone" name="cellphone" /><br /><br />
+      </div>
+
+      <button type="button" dir="rtl" onclick="setUser()">המשך</button>
+    </form>
+  </body>
+  <script>
+    async function setUser() {
+      try {
+        const firstName = document.getElementById("fname").value;
+        const lastName = document.getElementById("lname").value;
+        const userId = document.getElementById("id").value;
+        const address = document.getElementById("address").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const phone = document.getElementById("phone").value;
+        const cellphone = document.getElementById("cellphone").value;
+        const user = {
+          firstName,
+          lastName,
+          userId,
+          address,
+          birthdate,
+          phone,
+          cellphone,
+        };
+        console.log(user);
+        const response = await fetch("/info/new", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error("Failed to get response from server");
+        }
+
+        const data = await response.json();
+        console.log("Data from server:", data);
+      } catch (error) {
+        console.error("Failed to set user to the server. ", error);
+      }
+    }
+  </script>
+</html>

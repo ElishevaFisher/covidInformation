@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <dir ="rtl" />
+    <title>ניהול קורונה</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1 dir="rtl">מערכת לניהול מידע אודות חולי קורונה</h1>
+
+    <h4 dir="rtl">רשימת הלקוחות במערכת</h4>
+
+    <div id="usersList" dir="rtl">
+      <table id="usersTable">
+        <tr>
+          <th>National id</th>
+          <th>First name</th>
+          <th>Last name</th>
+        </tr>
+      </table>
+    </div>
+
+    <a href="newMember.html">
+      <button type="button" dir="rtl" onclick="">הוספת חבר חדש</button>
+    </a>
+  </body>
+
+  <script>
+    async function getUsers() {
+      try {
+        const response = await fetch("/info");
+        if (!response.ok) {
+          throw new Error("Failed to get response from server");
+        }
+
+        const data = await response.json();
+        console.log("Data from server:", data);
+
+        const tableBody = document.getElementById("usersTable");
+        data.forEach((user) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                 <td>${user.national_id}</td>
+                 <td>${user.first_name}</td>
+                 <td>${user.last_name}</td>
+             `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Failed to get users from server. ", error);
+      }
+    }
+    getUsers();
+  </script>
+</html>
