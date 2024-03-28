@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/info', covidInfoRoutes);
 
-//הצעה בלבד
+
 app.get('/newMember', (req, res) => {
     res.sendFile(path.join(__dirname, "client/newMember.html"));
 })
